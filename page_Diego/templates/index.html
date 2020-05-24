@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SVM Model</title>
+	<h1 style="text-align: center">Welcome to the credit card fraud detector</h1>
+</head>
+<body style = "font-family: Arial">
+	<div style = "width: 65%; margin: 0 auto">
+		<p style = "text-align: center">This detector uses machine learning to analyze and predict a credit card fraud using a Support Vector Machine or SVM model. By clicking <a href="#about">here</a> you'll be able to read and understand how the model was built. If you want to input some data and see what our model say about your transaction click <a href="#predict">here</a>.</p>
+		<p style="text-align: center; padding-top: 2em"> Some examples of the segregation made by the SVM model using only two features.</p>
+		<div style = "text-align: center;">
+			<img src="media/svm_example_1.png">
+			<img src="media/svm_example_2.png">
+			<img src="media/svm_example_3.png">
+			<img src="media/svm_example_4.png">
+		</div>
+		<a name = "about">
+		<div style = "text-align: center;">
+			<h3 style="font-weight: bold; padding-top: 2em">The f1_score</h3>
+			<p>The f1_score is a balance between the precision 'p' of the model and the recall value.</p>
+			<p>Our model's f1_score is {{f1}}%</p>
+		</div>
+		<div style = "text-align: center;">
+			<h3 style="font-weight: bold; padding-top: 2em">The recall_score</h3>
+			<p>The recall_score or the sensitivity is the probability that some relevant data is retrieved from the training base.</p>
+			<p>Our model's recall_score is {{recall}}%</p>
+		</div>
+		<a name = "predict">
+		<div style = "text-align: center;">
+			<h3 style="font-weight: bold; padding-top: 2em">Predict using our model</h3>
+			<p style="font-weight: bold;"> READ THIS BEFORE INPUTING DATA </p>
+			<p>Unfortunately, our dataset features (columns) don't have names that explain what the values that they contain are due to privacy. Because of that, we are unable to know what data you should really input to perform the prediction using the SVM model. So, to minimize the errors, we'll show the range of values that you should input to get the most realistic prediction. We do not recommend you using arbitrary values since you would get a non sense prediction.</p>
+		</div>
+		<div>
+			<form method="POST">
+				<div style = "float: left; padding-right: 5.2em">
+					<p>V3 (range {{v3min}} ~ {{v3max}})</p>
+					<input type="number" name="V3" step="any" placeholder="0" required="required">
+				</div>
+				<div style = "float: left; padding-right: 5.2em">
+					<p>V4 (range {{v4min}} ~ {{v4max}})</p>
+					<input type="number" name="V4" step="any" placeholder="0" required="required">
+				</div>
+				<div style = "float: left; padding-right: 5.2em">
+					<p>V9 (range {{v9min}} ~ {{v9max}})</p>
+					<input type="number" name="V9" step="any" placeholder="0" required="required">
+				</div>
+				<div style = "float: left; padding-right: 5.2em">
+					<p>V10 (range {{v10min}} ~ {{v10max}})</p>
+					<input type="number" name="V10" step="any" placeholder="0" required="required">
+				</div>
+				<div style = "float: left; padding-right: 5.2em">
+					<p>V11 (range {{v11min}} ~ {{v11max}})</p>
+					<input type="number" name="V11" step="any" placeholder="0" required="required">
+				</div>
+				<div style = "float: left; padding-right: 5.2em">
+					<p>V12 (range {{v12min}} ~ {{v12max}})</p>
+					<input type="number" name="V12" step="any" placeholder="0" required="required">
+				</div>
+				<div style = "float: left; padding-right: 5.2em">
+					<p>V14 (range {{v14min}} ~ {{v14max}})</p>
+					<input type="number" name="V14" step="any" placeholder="0" required="required">
+				</div>
+				<div style = "float: left; padding-right: 5.2em">
+					<p>V16 (range {{v16min}} ~ {{v16max}})</p>
+					<input type="number" name="V16" step="any" placeholder="0" required="required">
+				</div>
+				<div style = "float: left; padding-right: 5.2em">
+					<p>V17 (range {{v17min}} ~ {{v17max}})</p>
+					<input type="number" name="V17" step="any" placeholder="0">
+				</div>
+				<div style = "float: left; margin-top: 1em">
+					<input type="submit" value="Predict">
+					<p>Your transaction was classified by our SVM model as: {{predict_value}}</p>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
