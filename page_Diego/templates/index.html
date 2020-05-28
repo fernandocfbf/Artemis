@@ -33,46 +33,52 @@
 		</div>
 		<div>
 			<form method="POST">
-				<div style = "float: left; padding-right: 5.2em">
-					<p>V3 (range {{v3min}} ~ {{v3max}})</p>
-					<input type="number" name="V3" step="any" placeholder="0" required="required">
+				<div>
+					<div style = "text-align: left; float: left; width:33.33333%">
+						<p>V3 (range {{v3min}} ~ {{v3max}})</p>
+						<input type="number" name="V3" step="any" placeholder="0" required="required">
+					</div>
+					<div style = "text-align: center; float: left; width:33.33333%">
+						<p>V4 (range {{v4min}} ~ {{v4max}})</p>
+						<input type="number" name="V4" step="any" placeholder="0" required="required">
+					</div>
+					<div style = "text-align: right; float: left; width:33.33333%">
+						<p>V9 (range {{v9min}} ~ {{v9max}})</p>
+						<input type="number" name="V9" step="any" placeholder="0" required="required">
+					</div>
 				</div>
-				<div style = "float: left; padding-right: 5.2em">
-					<p>V4 (range {{v4min}} ~ {{v4max}})</p>
-					<input type="number" name="V4" step="any" placeholder="0" required="required">
+				<div>
+					<div style = "text-align: left; float: left; width:33.33333%">
+						<p>V10 (range {{v10min}} ~ {{v10max}})</p>
+						<input type="number" name="V10" step="any" placeholder="0" required="required">
+					</div>
+					<div style = "text-align: center; float: left; width:33.33333%">
+						<p>V11 (range {{v11min}} ~ {{v11max}})</p>
+						<input type="number" name="V11" step="any" placeholder="0" required="required">
+					</div>
+					<div style = "text-align: right; float: left; width:33.33333%">
+						<p>V12 (range {{v12min}} ~ {{v12max}})</p>
+						<input type="number" name="V12" step="any" placeholder="0" required="required">
+					</div>
 				</div>
-				<div style = "float: left; padding-right: 5.2em">
-					<p>V9 (range {{v9min}} ~ {{v9max}})</p>
-					<input type="number" name="V9" step="any" placeholder="0" required="required">
+				<div>
+					<div style = "text-align: left; float: left; width:33.33333%">
+						<p>V14 (range {{v14min}} ~ {{v14max}})</p>
+						<input type="number" name="V14" step="any" placeholder="0" required="required">
+					</div>
+					<div style = "text-align: center; float: left; width:33.33333%">
+						<p>V16 (range {{v16min}} ~ {{v16max}})</p>
+						<input type="number" name="V16" step="any" placeholder="0" required="required">
+					</div>
+					<div style = "text-align: right; float: left; width:33.33333%">
+						<p>V17 (range {{v17min}} ~ {{v17max}})</p>
+						<input type="number" name="V17" step="any" placeholder="0">
+					</div>
 				</div>
-				<div style = "float: left; padding-right: 5.2em">
-					<p>V10 (range {{v10min}} ~ {{v10max}})</p>
-					<input type="number" name="V10" step="any" placeholder="0" required="required">
-				</div>
-				<div style = "float: left; padding-right: 5.2em">
-					<p>V11 (range {{v11min}} ~ {{v11max}})</p>
-					<input type="number" name="V11" step="any" placeholder="0" required="required">
-				</div>
-				<div style = "float: left; padding-right: 5.2em">
-					<p>V12 (range {{v12min}} ~ {{v12max}})</p>
-					<input type="number" name="V12" step="any" placeholder="0" required="required">
-				</div>
-				<div style = "float: left; padding-right: 5.2em">
-					<p>V14 (range {{v14min}} ~ {{v14max}})</p>
-					<input type="number" name="V14" step="any" placeholder="0" required="required">
-				</div>
-				<div style = "float: left; padding-right: 5.2em">
-					<p>V16 (range {{v16min}} ~ {{v16max}})</p>
-					<input type="number" name="V16" step="any" placeholder="0" required="required">
-				</div>
-				<div style = "float: left; padding-right: 5.2em">
-					<p>V17 (range {{v17min}} ~ {{v17max}})</p>
-					<input type="number" name="V17" step="any" placeholder="0">
-				</div>
-				<div style = "float: left; margin-top: 1em">
-					<input type="submit" value="Predict">
-					<p>Your transaction was classified by our SVM model as: {{predict_value}}</p>
-				</div>
+					<div style = "float: left; margin-top: 1em">
+						<input type="submit" value="Predict">
+						<p>Your transaction was classified by our SVM model as: {{predict_value}}</p>
+					</div>
 			</form>
 		</div>
 	</div>
