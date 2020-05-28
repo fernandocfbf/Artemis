@@ -1,10 +1,8 @@
 #--IMPORTS MODELO SVM E DATA SCIENCE--#
 import pandas as pd
-import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn import svm
 from sklearn.metrics import f1_score, recall_score
-from sklearn.metrics import confusion_matrix
 import numpy as np
 
 #--FUNÇÕES EXTERNAS A PÁGINA--#
@@ -35,12 +33,15 @@ predict = model.predict(X_test)
 #--IMPORTS FLASK--#
 from flask import Flask, render_template, send_from_directory, request
 
+#Instancia do app web
 app = Flask(__name__)
 
+#Procedimentos de carregamento de midia
 @app.route('/media/<path:filename>')
 def page_send_file(filename):
     return send_from_directory('media', filename)
 
+#Procedimentos de carregamento do index
 @app.route('/')
 def page_index():
     return render_template("index.html", f1 = f1_score(y_test, predict) * 100,
@@ -56,10 +57,7 @@ def page_index():
                                          v17min = round(d['V17'].min(), 2), v17max = round(d['V17'].max(), 2),
                                          predict_value = "No prediction to be shown")
 
-@app.route('/about')
-def page_value():
-    return "<p>There's no about to be shown</p>"
-
+#Procedimentos de GET e POST dos valores de precição do modelo
 @app.route('/', methods = ['GET', 'POST'])
 def page_predict():
     prediction = "No prediction to be shown"
@@ -86,6 +84,8 @@ def page_predict():
                                          v16min = round(d['V16'].min(), 2), v16max = round(d['V16'].max(), 2),
                                          v17min = round(d['V17'].min(), 2), v17max = round(d['V17'].max(), 2),
                                          predict_value = prediction)
+
+#Inicialização do app
 if __name__ == '__main__':
     app.debug = True
     app.run(host = '0.0.0.0', port = 25565)
