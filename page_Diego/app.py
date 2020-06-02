@@ -57,7 +57,7 @@ def page_index():
                                          v17min = round(d['V17'].min(), 2), v17max = round(d['V17'].max(), 2),
                                          predict_value = "No prediction to be shown")
 
-#Procedimentos de GET e POST dos valores de precição do modelo
+#Procedimentos de GET e POST dos valores de precisão do modelo
 @app.route('/', methods = ['GET', 'POST'])
 def page_predict():
     prediction = "No prediction to be shown"
